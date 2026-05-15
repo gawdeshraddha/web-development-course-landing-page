@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Techkraftiers Digital | Web Development Institute & Full Stack Course</title>
+  <meta name="description"
+    content="Learn Full Stack Web Development from basic to advance. Get live project training, 100% placement assistance, and internship opportunities in Navi Mumbai." />
+  <meta name="keywords"
+    content="web development course, full stack developer, react training, placement support, techkraftiers digital, navi mumbai" />
+  <link rel="canonical" href="https://techkraftiersdigital.in" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- JSON-LD Schema for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Full Stack Web Development Masterclass",
+    "description": "Comprehensive full stack web development course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB from basic to advanced levels.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Techkraftiers Digital",
+      "sameAs": "https://techkraftiersdigital.in"
+    }
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Upgraded background with a subtle ambient glow to remove the "depressing" flat look */
+    body {
+      background: #0b1120;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(255, 107, 0, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 45, 117, 0.05), transparent 25%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #ff6b00;
+      --secondary: #ff2d75;
+      --dark: #0b1120;
+      --light: #f8fafc;
+      --text: #94a3b8;
+      --card: rgba(17, 24, 39, 0.7);
+      /* Upgraded to a glass effect */
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    h2.section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    /* Animated gradient for section titles */
+    .section-title span {
+      background: linear-gradient(90deg, var(--secondary), var(--primary), var(--secondary));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 3s linear infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .section-subtitle {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 60px;
+      line-height: 1.8;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      padding: 10px 0;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .logo img {
+      max-height: 40px;
+      /* Yahan se aap size bada/chhota kar sakte hain */
+      width: auto;
+      /* Aspect ratio maintain karne ke liye */
+      display: block;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* --- ENHANCED Continuous Button Glow Animation --- */
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.6);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(255, 107, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+      }
+    }
+
+    .btn-glow {
+      animation: pulseGlow 2s infinite;
+    }
+
+    .outline-btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .outline-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      margin-bottom: 25px;
+      color: #fff;
+      font-weight: 700;
+      backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat h3 {
+      font-size: 34px;
+      color: var(--primary);
+    }
+
+    .stat p {
+      margin: 0;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 80px rgba(255, 107, 0, 0.15);
+      /* Warmer shadow */
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      padding: 18px;
+      animation: float 4s ease-in-out infinite;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .floating-1 {
+      top: 10%;
+      left: -10%;
+    }
+
+    .floating-2 {
+      bottom: 10%;
+      right: -10%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-15px)
+      }
+    }
+
+    .about {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content p {
+      color: #475569;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    /* Features - Added Hover Lifts and Glassmorphism */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 30px rgba(255, 107, 0, 0.1);
+    }
+
+    .feature-card i {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: white;
+      box-shadow: 0 10px 20px rgba(255, 45, 117, 0.2);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* Courses Section */
+    .courses {
+      background: #020617;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .course-card {
+      background: var(--card);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.4s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255, 107, 0, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .course-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .course-content {
+      padding: 30px;
+      position: relative;
+      background: var(--card);
+      /* Hides image overflow on scale */
+    }
+
+    .course-content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .course-content p {
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .course-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* --- PREMIUM PLACEMENTS SECTION (FIXED SIZING & VISIBILITY) --- */
+    .placements {
+      background: transparent;
+      padding: 100px 0;
+    }
+
+    .placement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .company-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .company-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 35px rgba(255, 107, 0, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .logo-wrapper {
+      height: 85px;
+      /* Increased from 60px to 85px */
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .logo-wrapper img {
+      height: 100%;
+      width: auto;
+      max-width: 140px;
+      /* Let logos stretch wider */
+      object-fit: contain;
+      /* Removed heavy grayscale so they are visible immediately */
+      filter: grayscale(15%) opacity(95%);
+      transition: all 0.4s ease;
+    }
+
+    .company-card:hover .logo-wrapper img {
+      filter: grayscale(0%) opacity(100%);
+      transform: scale(1.1);
+    }
+
+    .company-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.4s ease;
+    }
+
+    .company-card:hover .company-name {
+      color: white;
+    }
+
+    /* Curriculum Accordion */
+    .curriculum {
+      background: #020617;
+    }
+
+    .accordion {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .accordion:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .accordion-header {
+      padding: 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .accordion-header:hover {
+      color: var(--primary);
+    }
+
+    .accordion-body {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .accordion.active .accordion-body {
+      padding: 0 25px 25px;
+      max-height: 800px;
+    }
+
+    .accordion-body ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .accordion-body li {
+      margin-bottom: 8px;
+    }
+
+    /* Mentors Section */
+    .mentors {
+      background: white;
+      color: #111827;
+    }
+
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .mentor-card {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 24px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      transition: 0.4s ease;
+    }
+
+    .mentor-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+
+    .mentor-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      object-fit: cover;
+      border: 3px solid transparent;
+      background: linear-gradient(white, white) padding-box, linear-gradient(135deg, var(--secondary), var(--primary)) border-box;
+      padding: 3px;
+    }
+
+    .mentor-card h3 {
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+
+    .mentor-card p {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .company-logos {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      opacity: 0.7;
+    }
+
+    .company-logos i {
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .mentor-card:hover .company-logos i {
+      opacity: 1;
+      color: var(--primary);
+    }
+
+    /* Pricing & Scarcity */
+    .pricing {
+      background: linear-gradient(to bottom, #0b1120, #020617);
+    }
+
+    .countdown-wrapper {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .time-box {
+      background: rgba(255, 107, 0, 0.1);
+      padding: 15px 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 107, 0, 0.3);
+      min-width: 90px;
+      backdrop-filter: blur(5px);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .time-box small {
+      font-size: 12px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .price-card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      transition: 0.4s ease;
+    }
+
+    .price-card.popular {
+      border-color: var(--primary);
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px rgba(255, 107, 0, 0.15);
+      z-index: 2;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .price-card.popular:hover {
+      transform: scale(1.05) translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+    }
+
+    .price-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .price span {
+      font-size: 18px;
+      color: var(--text);
+      font-weight: normal;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .features-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .features-list li i {
+      color: #25d366;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 22px;
+      transition: 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Testimonials Auto-Slider */
+    .testimonials {
+      background: linear-gradient(135deg, #111827, #1e293b);
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 30px;
+      width: max-content;
+      animation: scrollSlider 25s linear infinite;
+      padding-bottom: 20px;
+    }
+
+    .slider-track:hover {
+      animation-play-state: paused;
+    }
+
+    .testimonial-slide {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 35px;
+      border-radius: 24px;
+      width: 400px;
+      flex-shrink: 0;
+      backdrop-filter: blur(5px);
+      transition: 0.3s;
+    }
+
+    .testimonial-slide:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-slide img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-slide p {
+      color: #cbd5e1;
+      line-height: 1.9;
+    }
+
+    @keyframes scrollSlider {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-50% - 15px));
+      }
+    }
+
+    /* Success Stories Hover Reveal Cards */
+    .success-stories {
+      background: white;
+      color: #111827;
+    }
+
+    .success-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .success-card {
+      position: relative;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      overflow: hidden;
+      width: 400px;
+      height: 250px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .success-front {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+    }
+
+    .success-front img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      transition: 0.5s ease;
+    }
+
+    .success-front h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .success-front small {
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .success-info {
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateX(100%);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    .success-info h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .success-info p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .success-card:hover .success-front {
+      width: 40%;
+      box-shadow: 10px 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .success-card:hover .success-front img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .success-card:hover .success-info {
+      transform: translateX(0);
+    }
+
+    /* Blogs */
+    .blogs {
+      background: white;
+      color: #111827;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+      transition: 0.4s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 28px;
+    }
+
+    .blog-content h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .blog-card:hover .blog-content h3 {
+      color: var(--primary);
+    }
+
+    .blog-content p {
+      color: #64748b;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* FAQ */
+    .faq {
+      background: #020617;
+    }
+
+    .faq-item {
+      background: #111827;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateX(5px);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 12px;
+    }
+
+    .faq-item p {
+      color: #94a3b8;
+      line-height: 1.8;
+    }
+
+    /* Contact */
+    .contact {
+      background: white;
+      color: #111827;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info p {
+      color: #64748b;
+      line-height: 1.9;
+      margin-bottom: 15px;
+    }
+
+    .contact-card {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 25px;
+      align-items: flex-start;
+      padding: 15px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      background: #f8fafc;
+      transform: translateX(5px);
+    }
+
+    .contact-card i {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      border-radius: 18px;
+      font-size: 24px;
+      box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
+    }
+
+    form {
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 16px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+      padding: 50px 0 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #94a3b8;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      text-align: left;
+      margin-bottom: 40px;
+      align-items: start;
+    }
+
+    .footer-about h2 {
+      color: white;
+      font-size: 24px;
+    }
+
+    .footer-about span {
+      color: var(--primary);
+    }
+
+    .footer-about p {
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icons a:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+      border-color: transparent;
+    }
+
+    .footer-links h4 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .footer-map {
+      margin-bottom: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-map-container iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+
+    .footer-contact strong {
+      display: block;
+      margin-top: 15px;
+      color: white;
+    }
+
+    /* Media Queries */
+    @media(max-width: 1000px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 900px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 120px;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .stats {
+        justify-content: center;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .price-card.popular {
+        transform: scale(1);
+      }
+
+      .testimonial-slide {
+        width: 300px;
+      }
+
+      .success-card {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+
+    /* --- Exact Google Reviews Panel Styles --- */
+    .google-review-tab {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #f8f9fa;
+      color: #202124;
+      padding: 20px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      z-index: 1000;
+      transition: 0.3s;
+      border: 1px solid #dadce0;
+      border-right: none;
+    }
+
+    .google-review-tab:hover {
+      background: #f1f3f4;
+      padding-right: 12px;
+    }
+
+    .google-logo-tab {
+      width: 70px;
+      transform: rotate(-90deg);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tab-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #202124;
+    }
+
+    .google-review-tab i {
+      color: #5f6368;
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+    /* --- Sidebar Panel --- */
+    .google-review-panel {
+      position: fixed;
+      top: 0;
+      right: -450px;
+      width: 450px;
+      height: 100vh;
+      background: #ffffff;
+      color: #202124;
+      z-index: 1001;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .google-review-panel.active {
+      right: 0;
+    }
+
+    .panel-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .google-logo-header {
+      height: 24px;
+    }
+
+    .panel-header-title {
+      font-size: 18px;
+      color: #202124;
+      margin-left: 5px;
+      font-weight: 500;
+    }
+
+    .close-btn {
+      background: #f1f3f4;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5f6368;
+    }
+
+    .panel-scroll-content {
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* --- Rating Summary Layout --- */
+    .rating-summary-box {
+      display: flex;
+      padding: 0 20px 20px 20px;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .rating-bars {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rating-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #5f6368;
+    }
+
+    .rating-bar-row i {
+      color: #fbbc04;
+      font-size: 10px;
+    }
+
+    .bar-bg {
+      flex: 1;
+      height: 6px;
+      background: #f1f3f4;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #fbbc04;
+      border-radius: 4px;
+    }
+
+    .rating-score-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rating-score-big {
+      font-size: 54px;
+      color: #202124;
+      line-height: 1;
+    }
+
+    .rating-stars-big {
+      color: #fbbc04;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .rating-total-text {
+      color: #5f6368;
+      font-size: 12px;
+    }
+
+    /* --- Filters and Tags --- */
+    .review-tags {
+      padding: 0 20px 15px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+
+    .r-tag {
+      padding: 6px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 16px;
+      font-size: 12px;
+      color: #3c4043;
+      cursor: pointer;
+    }
+
+    .r-tag.active {
+      background: #e8f0fe;
+      color: #1967d2;
+      border-color: #e8f0fe;
+    }
+
+    .sort-by-section {
+      padding: 15px 20px;
+    }
+
+    .sort-title {
+      font-size: 12px;
+      color: #5f6368;
+      margin-bottom: 10px;
+    }
+
+    .sort-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sort-tag {
+      padding: 6px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 16px;
+      font-size: 12px;
+      color: #3c4043;
+      cursor: pointer;
+    }
+
+    /* --- Individual Reviews --- */
+    .reviews-list {
+      padding: 0 20px 20px 20px;
+    }
+
+    .review-card {
+      margin-bottom: 25px;
+    }
+
+    .r-user-info {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .r-user-info img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .r-user-details h4 {
+      font-size: 14px;
+      color: #202124;
+      margin-bottom: 2px;
+    }
+
+    .r-user-details p {
+      font-size: 12px;
+      color: #5f6368;
+      margin: 0;
+    }
+
+    .r-stars-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .r-stars-date i {
+      color: #fbbc04;
+      font-size: 12px;
+    }
+
+    .r-date {
+      font-size: 12px;
+      color: #5f6368;
+    }
+
+    .r-new-badge {
+      font-size: 10px;
+      font-weight: bold;
+      background: #f1f3f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #202124;
+    }
+
+    .r-text {
+      font-size: 14px;
+      color: #3c4043;
+      line-height: 1.5;
+    }
+
+    @media(max-width: 600px) {
+      .google-review-panel {
+        width: 100%;
+        right: -100%;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="topbar">
+    Admissions Open 2026 • Free Placement Assistance • Free Internship Opportunity
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+          <img src="logo.jpeg" alt="Techkraftiers Logo">
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#curriculum">Syllabus</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#courses">Courses</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#blogs">Blogs</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn">ENROLL NOW</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div data-aos="fade-right">
+        <div class="badge">
+          🚀 Navi Mumbai's Modern Web Development Institute
+        </div>
+
+        <h1>
+          Become a <span>Job Ready</span> Developer.
+        </h1>
+
+        <p>
+          Learn Full Stack Development, React, Freelancing, UI/UX, Real Client Projects and Placement Skills with
+          Techkraftiers Digital from basic to advanced.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">
+            Start Your Journey
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="#curriculum" class="outline-btn">
+            Explore Syllabus
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>500+</h3>
+            <p>Students Trained</p>
+          </div>
+
+          <div class="stat">
+            <h3>50+</h3>
+            <p>Projects Built</p>
+          </div>
+
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Placement Support</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+          alt="students">
+
+        <div class="floating-card floating-1">
+          💼 Internship Included
+        </div>
+
+        <div class="floating-card floating-2">
+          ⚡ Live Projects Training
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+          alt="about institute">
+      </div>
+
+      <div class="about-content" data-aos="fade-left">
+        <h2 class="section-title" style="text-align:left;color:#111827;">
+          About <span>Techkraftiers</span>
+        </h2>
+
+        <p>
+          Techkraftiers Digital is a modern skill-focused training institute helping students become industry-ready
+          developers through practical learning.
+        </p>
+
+        <p>
+          We focus on real-world projects, portfolio development, internships, freelancing exposure and placement
+          preparation instead of outdated theory-only teaching.
+        </p>
+
+        <a href="#contact" class="btn">
+          Book Free Counselling
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= NEW: CURRICULUM ACCORDION ================= -->
+  <section class="curriculum" id="curriculum">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Course <span>Curriculum</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">From absolute basics to advanced full-stack
+        deployment.</p>
+
+      <div style="max-width: 800px; margin: auto;" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="accordion active">
+          <div class="accordion-header">Module 1: Frontend Foundations <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="accordion-body">
+            <p>Master the building blocks of the web.</p>
+            <ul>
+              <li>HTML5 Semantic Tags & Forms</li>
+              <li>CSS3 Flexbox, Grid, & Animations</li>
+              <li>Responsive Design & Media Queries</li>
+              <li>Bootstrap & Tailwind CSS Basics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">Module 2: JavaScript Mastery <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="accordion-body">
+            <p>Learn programming logic and DOM manipulation.</p>
+            <ul>
+              <li>ES6+ Features (Arrow functions, Destructuring)</li>
+              <li>DOM Manipulation & Event Listeners</li>
+              <li>Asynchronous JS (Promises, Async/Await)</li>
+              <li>API Fetching & JSON handling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">Module 3: React.js Advanced <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="accordion-body">
+            <p>Build modern single-page applications.</p>
+            <ul>
+              <li>Components, Props, & State Management</li>
+              <li>React Hooks (useState, useEffect, useContext)</li>
+              <li>React Router for Navigation</li>
+              <li>Redux Toolkit Integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">Module 4: Backend & Databases (Node.js + MongoDB) <i
+              class="fa-solid fa-chevron-down"></i></div>
+          <div class="accordion-body">
+            <p>Create robust servers and manage data.</p>
+            <ul>
+              <li>Node.js & Express.js Setup</li>
+              <li>RESTful API Creation</li>
+              <li>MongoDB & Mongoose (NoSQL)</li>
+              <li>Authentication (JWT) & Security</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="placements">
+    <div class="container">
+
+      <!-- Removed the dark inline text color so it inherits white -->
+      <h2 class="section-title" data-aos="fade-up">
+        Students Get Hired In <span>Top Companies</span>
+      </h2>
+
+      <div class="placement-grid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="company-card">
+          <div class="logo-wrapper">
+            <img src="tcs.png" alt="TCS Logo">
+          </div>
+          <span class="company-name">TCS</span>
+        </div>
+
+        <div class="company-card">
+          <div class="logo-wrapper">
+            <img src="infosys.png" alt="Infosys Logo">
+          </div>
+          <span class="company-name">Infosys</span>
+        </div>
+
+        <div class="company-card">
+          <div class="logo-wrapper">
+            <img src="wipro.jpg" alt="Wipro Logo">
+          </div>
+          <span class="company-name">Wipro</span>
+        </div>
+
+        <div class="company-card">
+          <div class="logo-wrapper">
+            <img src="Accenture.jpg" alt="Accenture Logo">
+          </div>
+          <span class="company-name">Accenture</span>
+        </div>
+
+        <div class="company-card">
+          <div class="logo-wrapper">
+            <img src="capgemini.png" alt="Capgemini Logo">
+          </div>
+          <span class="company-name">Capgemini</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEW: MENTORS SECTION ================= -->
+  <section class="mentors">
+    <div class="container">
+      <h2 class="section-title" style="color:#111827;" data-aos="fade-up">Meet Your <span>Mentors</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Learn directly from industry experts who have
+        built production-level applications.</p>
+
+      <div class="mentor-grid">
+        <div class="mentor-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="sir.jpg" alt="Mentor">
+          <h3>Manish Athawale</h3>
+          <p>Sr. Full Stack Engineer (5+ Yrs Exp)</p>
+          <div class="company-logos">
+            <i class="fa-brands fa-aws"></i>
+            <i class="fa-brands fa-react"></i>
+            <i class="fa-brands fa-node-js"></i>
+          </div>
+        </div>
+
+        <div class="mentor-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+            alt="Mentor">
+          <h3>Priya Patel</h3>
+          <p>Frontend Lead & UI/UX Expert</p>
+          <div class="company-logos">
+            <i class="fa-brands fa-figma"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEW: PRICING & SCARCITY SECTION ================= -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="countdown-wrapper" data-aos="fade-up">
+        <h2>Next Full Stack Batch Starts In:</h2>
+        <div class="countdown">
+          <div class="time-box"><span id="days">05</span><small>Days</small></div>
+          <div class="time-box"><span id="hours">12</span><small>Hours</small></div>
+          <div class="time-box"><span id="mins">30</span><small>Mins</small></div>
+          <div class="time-box"><span id="secs">00</span><small>Secs</small></div>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card" data-aos="fade-right">
+          <h3>Self-Paced Learning</h3>
+          <div class="price">₹4,999</div>
+          <ul class="features-list">
+            <li><i class="fa-solid fa-check"></i> Recorded Video Lectures</li>
+            <li><i class="fa-solid fa-check"></i> Source Code Access</li>
+            <li><i class="fa-solid fa-check"></i> Discord Community Access</li>
+            <li style="color:#64748b"><i class="fa-solid fa-xmark" style="color:#64748b"></i> No Live Doubt Solving</li>
+            <li style="color:#64748b"><i class="fa-solid fa-xmark" style="color:#64748b"></i> No Placement Support</li>
+          </ul>
+          <a href="#contact" class="outline-btn" style="width:100%; display:block; text-align:center;">Buy Now</a>
+        </div>
+
+        <div class="price-card popular" data-aos="fade-left">
+          <div class="popular-badge">MOST POPULAR</div>
+          <h3>Live + Placement Pro</h3>
+          <div class="price">₹14,999</div>
+          <ul class="features-list">
+            <li><i class="fa-solid fa-check"></i> Daily Live Interactive Classes</li>
+            <li><i class="fa-solid fa-check"></i> 10+ Real-world Projects</li>
+            <li><i class="fa-solid fa-check"></i> 1-on-1 Doubt Solving Sessions</li>
+            <li><i class="fa-solid fa-check"></i> Resume & Interview Prep</li>
+            <li><i class="fa-solid fa-check"></i> 100% Placement Assistance</li>
+          </ul>
+          <a href="#contact" class="btn" style="width:100%; justify-content:center;">Enroll in Live Batch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXISTING SECTIONS (PRESERVED) ================= -->
+  <section class="courses" id="courses">
+    <div class="container">
+
+      <h2 class="section-title" data-aos="fade-up">
+        Our <span>Professional Courses</span>
+      </h2>
+
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Industry-oriented training designed for beginners, college students and aspiring developers.
+      </p>
+
+      <div class="course-grid">
+
+        <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="course-content">
+            <h3>Frontend Development</h3>
+
+            <p>
+              Learn HTML, CSS, JavaScript, Responsive Design and React through live projects.
+            </p>
+
+            <div class="course-tags">
+              <div class="tag">HTML</div>
+              <div class="tag">CSS</div>
+              <div class="tag">JavaScript</div>
+              <div class="tag">React</div>
+            </div>
+
+            <!-- In your Header navigation -->
+            <a href="#contact" class="btn btn-glow">Enroll Now</a>
+
+            <!-- In your Hero section -->
+            <a href="#contact" class="btn btn-glow">
+              Book a Free Demo
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+
+          </div>
+        </div>
+
+        <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="course-content">
+            <h3>Full Stack Development</h3>
+
+            <p>
+              Master frontend + backend development with real deployment projects.
+            </p>
+
+            <div class="course-tags">
+              <div class="tag">Node.js</div>
+              <div class="tag">MongoDB</div>
+              <div class="tag">React</div>
+              <div class="tag">APIs</div>
+            </div>
+
+            <a href="#contact" class="btn">Join Batch</a>
+          </div>
+        </div>
+
+        <div class="course-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="course-content">
+            <h3>Freelancing Bootcamp</h3>
+
+            <p>
+              Learn client acquisition, proposal writing and international freelancing.
+            </p>
+
+            <div class="course-tags">
+              <div class="tag">Upwork</div>
+              <div class="tag">Fiverr</div>
+              <div class="tag">Client Pitching</div>
+            </div>
+
+            <a href="#contact" class="btn">Start Learning</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title" data-aos="fade-up">
+        Why Students Choose <span>Us</span>
+      </h2>
+
+      <div class="features">
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>Live Project Training</h3>
+          <p>
+            Build real websites and portfolio projects instead of only watching tutorials.
+          </p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-user-graduate"></i>
+          <h3>Placement Support</h3>
+          <p>
+            Resume guidance, mock interviews and hiring support for students.
+          </p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>Internship Opportunity</h3>
+          <p>
+            Work on client projects and gain practical experience.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="gallery">
+    <div class="container">
+
+      <h2 class="section-title" data-aos="fade-up">
+        Institute <span>Gallery</span>
+      </h2>
+
+      <p class="section-subtitle" data-aos="fade-up">
+        Glimpse of our vibrant learning environment, student projects at Techkraftiers Digital.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="work-place.jpeg" alt="gallery image" data-aos="fade-up" data-aos-delay="100">
+        <img src="working.jpeg" alt="gallery image" data-aos="fade-up" data-aos-delay="200">
+        <img src="office1.jpeg" alt="gallery image" data-aos="fade-up" data-aos-delay="300">
+        <img src="office2.jpeg" alt="gallery image" data-aos="fade-up" data-aos-delay="400">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS SLIDER ================= -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up" style="color:white;">Course <span>Reviews</span></h2>
+    </div>
+
+    <div class="slider-track" data-aos="fade-up">
+      <!-- Slide 1 -->
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Rakesh Jadhav</h3>
+            <small style="color: var(--primary);">Frontend Developer</small>
+          </div>
+        </div>
+        <p>The internship exposure and projects completely changed my career direction. Best decision ever.</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Pooja Mangale</h3>
+            <small style="color: var(--primary);">UI Developer</small>
+          </div>
+        </div>
+        <p>Unlike traditional institutes, they actually focus on practical development and portfolio building.</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Amit Singh</h3>
+            <small style="color: var(--primary);">Full Stack Engineer</small>
+          </div>
+        </div>
+        <p>The mentors are very supportive. I went from knowing zero coding to building full-stack apps.</p>
+      </div>
+
+      <!-- DUPLICATED SLIDES TO CREATE INFINITE LOOP -->
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Rakesh Jadhav</h3>
+            <small style="color: var(--primary);">Frontend Developer</small>
+          </div>
+        </div>
+        <p>The internship exposure and projects completely changed my career direction. Best decision ever.</p>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Pooja Mangale</h3>
+            <small style="color: var(--primary);">UI Developer</small>
+          </div>
+        </div>
+        <p>Unlike traditional institutes, they actually focus on practical development and portfolio building.</p>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-header">
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Student">
+          <div>
+            <h3 style="color: white;">Amit Singh</h3>
+            <small style="color: var(--primary);">Full Stack Engineer</small>
+          </div>
+        </div>
+        <p>The mentors are very supportive. I went from knowing zero coding to building full-stack apps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUCCESS STORIES HOVER CARDS ================= -->
+  <section class="success-stories">
+    <div class="container">
+      <h2 class="section-title" style="color: #111827;" data-aos="fade-up">Student <span>Success Stories</span></h2>
+      <p class="section-subtitle" data-aos="fade-up">Hover over the cards to see their placement journey.</p>
+
+      <div class="success-grid">
+
+        <!-- Card 1 -->
+        <div class="success-card" data-aos="fade-up">
+          <div class="success-front">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Student">
+            <h3>Kunal Patil</h3>
+            <small>Hired at TCS</small>
+          </div>
+          <div class="success-info">
+            <h4>From B.Com to Tech</h4>
+            <p>Kunal transitioned from a non-IT background to securing a Full Stack role at TCS with a 5 LPA package
+              within 6 months.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="success-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="success-front">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student">
+            <h3>Neha Gupta</h3>
+            <small>Hired at Capgemini</small>
+          </div>
+          <div class="success-info">
+            <h4>Freelancer to Full-Time</h4>
+            <p>Neha started with our freelancing bootcamp, gained practical client experience, and leveraged her
+              portfolio to clear interviews.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="blogs" id="blogs">
+    <div class="container">
+
+      <h2 class="section-title" style="color:#111827;" data-aos="fade-up">
+        Latest <span>Blogs</span>
+      </h2>
+
+      <p class="section-subtitle" data-aos="fade-up">
+        This section can later be connected with your dashboard API.
+      </p>
+
+      <div class="blog-grid" id="blogContainer">
+
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="blog-content">
+            <h3>Why Every Business Needs a Website in 2026</h3>
+            <p>
+              Learn how websites help businesses build credibility and attract customers.
+            </p>
+
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="blog-content">
+            <h3>Top Skills Every Developer Should Learn</h3>
+            <p>
+              The most valuable technologies students should focus on in 2026.
+            </p>
+
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+
+      <h2 class="section-title" data-aos="fade-up">
+        Frequently Asked <span>Questions</span>
+      </h2>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+        <h3>Is this course beginner friendly?</h3>
+        <p>Yes. We teach from absolute basics to advanced projects.</p>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+        <h3>Do you provide placements?</h3>
+        <p>We provide placement support, interview preparation and internship opportunities.</p>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <h3>Online or Offline?</h3>
+        <p>Both online and offline batches are available.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+
+      <div class="contact-info" data-aos="fade-right">
+        <h2 class="section-title" style="text-align:left;color:#111827;">
+          Contact <span>Us</span>
+        </h2>
+
+        <p>
+          Ready to start your tech journey? Connect with Techkraftiers Digital today.
+        </p>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+
+          <div>
+            <h3>Call Us</h3>
+            <p>+91 7738415492</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+
+          <div>
+            <h3>Email</h3>
+            <p>info@techkraftiersdigital.in</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+            <h3>Location</h3>
+            <p>Navi Mumbai, Maharashtra</p>
+          </div>
+        </div>
+
+      </div>
+
+      <form data-aos="fade-left">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="WhatsApp Number" required>
+
+        <select required>
+          <option value="" disabled selected>Select Course Plan</option>
+          <option>Frontend Development</option>
+          <option>Full Stack Development - Live + Placement Pro</option>
+          <option>Full Stack Development - Self Paced</option>
+          <option>Freelancing</option>
+        </select>
+
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+
+        <button class="btn" style="width:100%;justify-content:center;">
+          Submit Enquiry
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- Google Reviews Tab -->
+  <div class="google-review-tab" id="reviewTab">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+      class="google-logo-tab">
+    <span class="tab-text">Reviews</span>
+    <i class="fa-solid fa-chevron-left"></i>
+  </div>
+
+  <!-- Google Reviews Sidebar -->
+  <div class="google-review-panel" id="reviewPanel">
+    <div class="panel-header-top">
+      <div style="display:flex; align-items:center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+          style="height:20px;">
+        <span style="font-weight:500; margin-left:8px;">Reviews</span>
+      </div>
+      <button class="close-btn" id="closePanel">&times;</button>
+    </div>
+
+    <div class="panel-scroll-content">
+      <div class="rating-summary-box">
+        <div class="rating-score-box">
+          <div class="rating-score-big">4.9</div>
+          <div style="color:#fbbc04; font-size:14px; margin:5px 0;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div style="font-size:12px; color:#5f6368;">25 reviews</div>
+        </div>
+        <div class="rating-bars">
+          <div class="bar-row"><span>5</span>
+            <div class="bar-bg">
+              <div class="bar-fill" style="width:95%"></div>
+            </div>
+          </div>
+          <div class="bar-row"><span>4</span>
+            <div class="bar-bg">
+              <div class="bar-fill" style="width:5%"></div>
+            </div>
+          </div>
+          <div class="bar-row"><span>3</span>
+            <div class="bar-bg"></div>
+          </div>
+          <div class="bar-row"><span>2</span>
+            <div class="bar-bg"></div>
+          </div>
+          <div class="bar-row"><span>1</span>
+            <div class="bar-bg"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-tags">
+        <span class="r-tag">social media branding 4</span>
+        <span class="r-tag">web development 3</span>
+        <span class="r-tag">skill development 4</span>
+        <span class="r-tag">clear explanations 2</span>
+      </div>
+
+      <div class="reviews-list">
+        <!-- Nikita Dige (New/Relevant) -->
+        <div class="review-card">
+          <div class="r-user-info">
+            <div class="r-avatar" style="background:#4285F4;">N</div>
+            <div>
+              <h4 style="font-size:14px;">Nikita dige</h4><small style="color:#5f6368;">a week ago</small>
+            </div>
+          </div>
+          <div class="r-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div class="r-text">I completed my Full Stack Web Development course at Techkraftiers Digital. The
+            training was very practical and easy to understand. Trainers were supportive and guided well throughout
+            the course.</div>
+          <div class="owner-reply"><b>Response from owner:</b> We’re glad to hear that you had a great learning
+            experience. It’s wonderful to see you growing and starting your journey as an intern!</div>
+        </div>
+
+        <!-- Prasad Mapari -->
+        <div class="review-card">
+          <div class="r-user-info">
+            <div class="r-avatar" style="background:#EA4335;">P</div>
+            <div>
+              <h4 style="font-size:14px;">PRASAD MAPARI</h4><small style="color:#5f6368;">4 months ago</small>
+            </div>
+          </div>
+          <div class="r-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div class="r-text">This platform offers powerful tools for website creation — responsive design, SEO
+            optimization, and reliable hosting. Great choice for both beginners and experienced users. Best
+            institute in Taloja & Nerul.</div>
+        </div>
+
+        <!-- Rakesh Jadhav -->
+        <div class="review-card">
+          <div class="r-user-info">
+            <div class="r-avatar" style="background:#FBBC05;">R</div>
+            <div>
+              <h4 style="font-size:14px;">Rakesh Jadhav</h4><small style="color:#5f6368;">4 months ago</small>
+            </div>
+          </div>
+          <div class="r-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div class="r-text">The curriculum is truly exceptional, providing not just theoretical knowledge but also
+            actionable, cutting-edge strategies.</div>
+        </div>
+
+        <!-- Pooja Mangale -->
+        <div class="review-card">
+          <div class="r-user-info">
+            <div class="r-avatar" style="background:#34A853;">P</div>
+            <div>
+              <h4 style="font-size:14px;">pooja mangale</h4><small style="color:#5f6368;">4 months ago</small>
+            </div>
+          </div>
+          <div class="r-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div class="r-text">Highly professional, knowledgeable, and supportive. They explain concepts clearly.
+            Their digital marketing expertise and guidance really stand out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= EXISTING DETAILED FOOTER (PRESERVED) ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-about" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
+            alt="Team meeting placeholder" style="width: 100%; border-radius: 12px; margin-bottom: 20px;">
+          <h2>Tech<span>kraftiers</span></h2>
+          <h3 style="color: white; margin-top: 5px;">Digital</h3>
+          <p>We are a leading digital marketing agency dedicated to helping businesses grow and succeed in the
+            digital
+            world.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links" data-aos="fade-up" data-aos-delay="300">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Social Media Marketing</a></li>
+            <li><a href="#">Search Engine Marketing (SEM)</a></li>
+            <li><a href="#">Search Engine Optimization(SEO)</a></li>
+            <li><a href="#">Graphic Designing</a></li>
+            <li><a href="#">UI/UX Designing</a></li>
+            <li><a href="#">Mobile App Development</a></li>
+            <li><a href="#">Wordpress Website</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links footer-contact" data-aos="fade-up" data-aos-delay="400">
+          <h4>Find Us</h4>
+          <p>Visit our office at the location below:</p>
+
+          <div class="footer-map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Haware's%20Centurion%20Mall,%20Nerul&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <strong>Nerul Address:</strong>
+          <p>F-19-A, Haware’s Centurion Mall, Sector 19A, Nerul East, NaviMumbai, 400706.</p>
+
+          <strong>Taloja Address:</strong>
+          <p>Shop no.14, AK Orion, Sector16, plot no.4, Taloja phase-2, 410208, near Pendhar Metro Station</p>
+
+          <strong>Contact Info:</strong>
+          <p>📞 +91 7738415492 <br> ✉️ info@techkraftiersdigital.in</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom"
+      style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);">
+      <div class="container">
+        © 2026 Techkraftiers Digital. All Rights Reserved. | Designed & Developed by <span
+          style="color: var(--primary);">Techkraftiers Digital</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= EXISTING FLOATING ACTIONS (PRESERVED) ================= -->
+  <div class="floating-actions">
+    <a href="#" class="float-btn btn-up"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="https://wa.me/917738415492" class="float-btn btn-whatsapp" target="_blank"><i
+        class="fa-brands fa-whatsapp"></i></a>
+    <a href="#contact" class="float-btn btn-chat"><i class="fa-solid fa-comment-dots"></i></a>
+  </div>
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Dynamic Blog API Integration Example (Preserved)
+    async function loadBlogs() {
+      try {
+        // Replace with your real API endpoint
+        // const response = await fetch('https://techkraftiersdigital.in/api/blogs')
+        // const blogs = await response.json()
+        console.log('Connect your blog dashboard API here')
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+    loadBlogs();
+
+    // Wait for the HTML to fully load before attaching clicks and DOM logic
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Accordion Logic for Curriculum
+      const accordions = document.querySelectorAll('.accordion');
+      accordions.forEach(acc => {
+        const header = acc.querySelector('.accordion-header');
+        if (header) {
+          header.addEventListener('click', () => {
+            accordions.forEach(a => {
+              if (a !== acc) a.classList.remove('active');
+            });
+            acc.classList.toggle('active');
+          });
+        }
+      });
+
+      // 2. Countdown Timer Logic
+      function startTimer() {
+        let days = 5, hours = 12, minutes = 30, seconds = 0;
+
+        setInterval(function () {
+          seconds--;
+          if (seconds < 0) { seconds = 59; minutes--; }
+          if (minutes < 0) { minutes = 59; hours--; }
+          if (hours < 0) { hours = 23; days--; }
+          if (days < 0) { days = 0; hours = 0; minutes = 0; seconds = 0; }
+
+          document.getElementById("days").innerText = days.toString().padStart(2, '0');
+          document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+          document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
+          document.getElementById("secs").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+      }
+
+      // Initialize timer only if the element exists
+      if (document.getElementById("days")) {
+        startTimer();
+      }
+
+      // 3. Smooth scroll to top function (FIXED NULL CHECK)
+      const btnUp = document.querySelector('.btn-up');
+      if (btnUp) {
+        btnUp.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 4. Google Reviews Panel Logic
+      const reviewTab = document.getElementById('reviewTab');
+      const reviewPanel = document.getElementById('reviewPanel');
+      const closePanel = document.getElementById('closePanel');
+
+      if (reviewTab && reviewPanel && closePanel) {
+        reviewTab.addEventListener('click', () => {
+          reviewPanel.classList.add('active');
+        });
+
+        closePanel.addEventListener('click', () => {
+          reviewPanel.classList.remove('active');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!reviewPanel.contains(e.target) && !reviewTab.contains(e.target)) {
+            reviewPanel.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
